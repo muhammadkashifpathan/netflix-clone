@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --red-color: #e50914;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+main .hero {
+    position: relative;
+    height: 100vh;
+    background: url("../assets/banner.jpg") no-repeat center center/cover;
+}
+
+main .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    position: relative;
+}
+
+.header .logo img {
+    width: 200px;
+    cursor: pointer;
+}
+
+.header div:last-child {
+    position: relative;
+    right: 20px;
+    bottom: 4px;
+}
+
+.signup-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    background-color: var(--red-color);
+    color: white;
+    transition: all .3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #cc0913;
+}
+
+.hero-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+    width: 70vw;
+    margin: auto;
+}
+
+.hero-text h1 {
+    font-size: 54px;
+    font-weight: 900;
+}
+
+.hero-text p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero-text h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    width: 70%;
+    justify-content: center;
+}
+
+form input {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    border: 1px solid gray;
+    outline: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    flex: 1;
+}
+
+form button {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.section {
+    width: 80%;
+    margin: auto;
+}
+
+.section h2 {
+    margin: 50px 0 20px 0;
+}
+
+.cards-container {
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.cards-container .card img {
+    border-radius: 10px;
+    transition: all .5s ease;
+}
+
+.cards-container .card img:hover {
+    transform: scale(1.03);
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.reasons-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.reasons-cards-container .reason-card {
+    background: linear-gradient(149deg, #192247 0%, #210e17 99.08%);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.reasons-cards-container .reason-card h3 {
+    font-size: 22px;
+
+}
+
+.reasons-cards-container .reason-card p {
+    color: gainsboro;
+    margin: 15px auto;
+
+}
+
+.reasons-cards-container .reason-card svg {
+    align-self: flex-end;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.faq-container {
+    margin: 20px auto;
+    background: linear-gradient(149deg, #192247 0%, #210e17 99.08%);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    padding: 10px 20px;
+}
+
+
+/* FAQ Item */
+.faq-item {
+    margin: 10px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 15px rgba(31, 38, 135, 0.37);
+}
+
+/* Question */
+.faq-question {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+.faq-answer {
+    padding: 0 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.faq-answer.show {
+    padding: 15px;
+}
+
+.faq-answer p:nth-child(2) {
+    margin-top: 20px;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.footer-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 50px auto;
+}
+
+.footer-signup h3 {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+footer {
+    background-color: #141414;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #e50914;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    height: 24px;
+    width: 24px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.social-icons li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons li a svg {
+    filter: invert(1);
+    width: 20px;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 1150px) {
+    main .hero {
+        height: fit-content;
+    }
+
+    .reasons-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-text,
+    .footer-signup {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 730px) {
+    .header {
+        padding: 10px;
+    }
+
+    form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    form button {
+        align-self: center;
+    }
+
+    .reasons-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header {
+        padding: 0;
+    }
+
+    .header .logo img {
+        width: 130px;
+    }
+
+    .header .signup-btn {
+        padding: 5px 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .hero-text h2 {
+        font-size: 12px;
+    }
+
+    form button,
+    form input {
+        font-size: 16px;
+    }
+
+    .section h2 {
+        font-size: 20px;
+    }
+
+    .cards-container {
+        gap: 10px;
+    }
+
+    .cards-container .card img {
+        width: 130px;
+    }
+
+    .faq-container {
+        padding: 5px 10px;
+    }
+
+    .faq-item {
+        border-radius: 5px;
+    }
+
+    .faq-question {
+        padding: 6px 12px;
+    }
+}
